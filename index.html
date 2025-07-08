@@ -15,11 +15,12 @@
     </header>
     <div class="main-wrapper">
         <label for="note_title"><b>Title</b></label><br>
-        <input id="note_title" type="text" placeholder="title">
+        <input id="note_title" type="text" placeholder="type title here">
         <br>
         <label for="note_title"><b>Note</b></label><br>
-        <input id ="note_input" type="text" onkeydown="if(event.key==='Enter'){addNote()}" placeholder="press enter to add note" >
+        <input id ="note_input" type="text" onkeydown="if(event.key==='Enter'){addNote()}" placeholder="type note here" >
         <div class="nav-buttons">
+            <button onclick="addNoteWithValidation()">Add Note</button>
             <button onclick="window.location.href='html/trash.html'">Trash</button>
             <button onclick="window.location.href='html/archive.html'">Archive</button>
         </div>

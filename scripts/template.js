@@ -47,4 +47,17 @@ function modalTemplate(title, text) {
 function closeModal() {
     const modalBg = document.getElementById('modal-bg');
     if (modalBg) modalBg.remove();
+}
+
+function validationModalTemplate(title, message) {
+    return `<div class='modal-bg' id='modal-bg' onclick='closeModal()'>
+        <div class='modal' onclick='event.stopPropagation();'>
+            <div class='modal-title'>${title}</div>
+        </div>
+    </div>`;
+}
+
+function showMessage(message) {
+    closeModal();
+    document.body.insertAdjacentHTML('beforeend', validationModalTemplate(message, ''));
 } 
