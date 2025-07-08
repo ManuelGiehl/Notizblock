@@ -37,7 +37,7 @@ label {
 }
 
 input[type="text"] {
-    width: 260px;
+    width: 100%;
     padding: 10px 14px;
     border-radius: 8px;
     border: none;
@@ -48,6 +48,7 @@ input[type="text"] {
     box-shadow: 0 1px 4px #0001;
     outline: none;
     transition: box-shadow 0.2s;
+    box-sizing: border-box;
 }
 input[type="text"]:focus {
     box-shadow: 0 2px 8px #23395d44;
@@ -218,21 +219,24 @@ header h1 {
 
 .nav-buttons {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
     margin: 24px 0 18px 0;
-    padding: 0 10vw;
+    padding: 0;
     width: 100%;
     box-sizing: border-box;
 }
 
 .nav-buttons button {
+    flex: 1 1 0;
     font-size: 0.95rem;
-    padding: 8px 14px;
-    min-width: 70px;
+    padding: 8px 0;
+    min-width: 0;
     min-height: 38px;
     margin: 0;
     border-radius: 10px;
+    text-align: center;
 }
 
 @media (max-width: 600px) {
@@ -261,6 +265,8 @@ header h1 {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    max-width: 340px;
+    box-sizing: border-box;
 }
 
 footer {
