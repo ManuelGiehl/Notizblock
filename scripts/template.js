@@ -29,7 +29,7 @@ function previewText(text, maxLen) {
 
 function noteCardTemplate(note, i, buttonsHtml = '') {
     return `<div class="note-card" onclick="openModal(${i})">
-        <div class="note-title">${note.title}</div>
+        <div class="note-title">${previewText(note.title, 15)}</div>
         <div class="note-text">${previewText(note.text, 10)}</div>
         <div class="note-buttons" onclick="event.stopPropagation();">${buttonsHtml}</div>
     </div>`;

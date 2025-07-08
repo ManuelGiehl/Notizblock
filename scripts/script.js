@@ -29,7 +29,6 @@ function addNote() {
     let title = titleRef.value.trim();
     let text = textRef.value.trim();
     if (!title || !text) return titleRef.value = textRef.value = '';
-    if (title.length > 15) title = title.substring(0, 15);
     const note = { title, text };
     if (editIndex !== null) notes[editIndex] = note, editIndex = null;
     else notes.push(note);
@@ -56,8 +55,6 @@ function addNoteWithValidation() {
     if (!inputs) return;
     
     let { title, text } = inputs;
-    if (title.length > 15) title = title.substring(0, 15);
-    
     const note = { title, text };
     if (editIndex !== null) notes[editIndex] = note, editIndex = null;
     else notes.push(note);
@@ -69,7 +66,7 @@ function addNoteWithValidation() {
 
 function noteCardTemplate(note, i, buttonsHtml = '') {
     return `<div class="note-card" onclick="openModal(${i})" style="background:#222;color:#fff;border-radius:16px;padding:24px 16px 16px 16px;margin:16px 0;position:relative;box-shadow:0 2px 8px #0002;cursor:pointer;max-width:220px;text-align:center;display:inline-block;">
-        <div style=\"font-weight:bold;font-size:1.2em;margin-bottom:18px;\">${note.title}</div>
+        <div style=\"font-weight:bold;font-size:1.2em;margin-bottom:18px;\">${previewText(note.title, 15)}</div>
         <div style=\"margin-bottom:18px;\">${note.text}</div>
         <div style=\"display:flex;justify-content:center;gap:8px;\" onclick=\"event.stopPropagation();\">${buttonsHtml}</div>
     </div>`;
