@@ -3,19 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notizblock</title>
+    <title>My Notes</title>
 
     <link rel="stylesheet" href="./style/standard.css">
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/png" href="./img/android-chrome-192x192.png">
 </head>
 <body onload="renderNotes()">
-    <h1>Notizblock</h1>
-    <input id ="note_input" type="text">
-    <button onclick="addNote()"> Notiz speichern</button>
-    
-        
-    <div id ="content"></div>
+    <header>
+        <h1>My Notes</h1>
+    </header>
+    <div class="main-wrapper">
+        <label for="note_title"><b>Title</b></label><br>
+        <input id="note_title" type="text" placeholder="title">
+        <br>
+        <label for="note_title"><b>Note</b></label><br>
+        <input id ="note_input" type="text" onkeydown="if(event.key==='Enter'){addNote()}" placeholder="press enter to add note" >
+        <div class="nav-buttons">
+            <button onclick="window.location.href='html/trash.html'">Trash</button>
+            <button onclick="window.location.href='html/archive.html'">Archive</button>
+        </div>
+        <div id ="content"></div>
+    </div>
+
+    <footer>
+        <span>© 2025 My Notes</span>
+    </footer>
    
+    <script src="./scripts/template.js"></script>
     <script src="./scripts/script.js"></script>
 </body>
 </html>
